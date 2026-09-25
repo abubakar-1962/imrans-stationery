@@ -60,3 +60,6 @@ If the shop's WhatsApp number, delivery fees, or address changes, you only need 
 
 Open `js/config.js` and change the details there. They will automatically update across the header, footer, checkout cart, and contact pages.
 
+
+## Customer Reviews
+Note: There is no moderation UI or submission form for reviews yet. Entries in data/reviews.json are added manually.

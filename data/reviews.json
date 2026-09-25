@@ -1,5 +1,4 @@
 [
-  /* Note: There is no moderation UI or submission form yet. Entries are added manually. */
   {
     "id": 1,
     "name": "Ayesha K.",
@@ -23,7 +22,7 @@
   },
   {
     "id": 4,
-    "productId": "BP-001",
+    "productId": 5,
     "name": "Ali R.",
     "rating": 5,
     "text": "Smooth writing experience, doesn't smudge. My go-to daily pen.",
@@ -31,23 +30,23 @@
   },
   {
     "id": 5,
-    "productId": "NB-A5-01",
+    "productId": 4,
     "name": "Sara I.",
     "rating": 4,
-    "text": "Good paper quality, fountain pen friendly.",
+    "text": "Good highlight colors and doesn't bleed through the paper.",
     "date": "2026-08-20"
   },
   {
     "id": 6,
-    "productId": "GEO-001",
+    "productId": 3,
     "name": "Usman B.",
     "rating": 5,
-    "text": "Sturdy geometry box, perfect for my son's school needs.",
+    "text": "Sticks really well, perfect for school projects.",
     "date": "2026-09-12"
   },
   {
     "id": 7,
-    "productId": "BP-001",
+    "productId": 5,
     "name": "Fatima S.",
     "rating": 4,
     "text": "Lasts a long time and the ink is very dark.",
