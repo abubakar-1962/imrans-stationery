@@ -239,15 +239,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       addBtn.textContent = "Added";
       setTimeout(function () { dlg.close(); addBtn.textContent = "Add to cart"; }, 700);
     });
-
-
-
-    var revForm = dlg.querySelector(".qv-review-form");
-    if (revForm) revForm.style.display = "none";
   }
 
   function renderReviews(p) {
     var wrapper = dlg.querySelector(".qv-reviews");
+    if (wrapper) wrapper.style.display = "none";
     var header = dlg.querySelector(".qv-reviews-header");
     var list = dlg.querySelector(".qv-reviews-list");
     

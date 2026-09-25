@@ -23,10 +23,10 @@ In data/products.json, each product has a "status" field.
 
 ## Product Reviews
 
-A basic groundwork for product reviews has been implemented.
-- Each product in data/products.json contains a "reviews" array.
-- Customers can submit 1-5 star reviews via the Quick View dialog.
-- **Note:** Because there is no backend server yet, submitted reviews are currently saved only to the user's local browser storage (localStorage). They will not be visible to other visitors. This is a deliberate limitation for the static site version until a backend is integrated.
+Reviews are managed manually via `data/reviews.json`.
+- There is no customer-facing submission form or moderation UI.
+- To add a new review, open `data/reviews.json` and add a new entry.
+- Ensure the `productId` matches an existing numeric ID from `data/products.json` if you want the review to appear on a specific product's Quick View dialog. Reviews without a `productId` will just appear generally on the homepage.
 
 ## Image Optimization
 
@@ -61,5 +61,3 @@ If the shop's WhatsApp number, delivery fees, or address changes, you only need 
 Open `js/config.js` and change the details there. They will automatically update across the header, footer, checkout cart, and contact pages.
 
 
-## Customer Reviews
-Note: There is no moderation UI or submission form for reviews yet. Entries in data/reviews.json are added manually.
