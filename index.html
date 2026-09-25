@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Imran's Stationery - Quality school and office supplies in Urdu Bazaar, Lahore." />
   <title>Imran's Stationery - Urdu Bazaar, Lahore</title>
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
   <link rel="icon" href="images/placeholder.svg" />
-  <script src="js/config.js?v=6"></script>
+  <script src="js/config.js?v=7"></script>
     <meta property="og:title" content="Imran's Stationery - Quality school and office supplies in Urdu Bazaar, Lahore" />
   <meta property="og:description" content="Explore our curated collection of fine stationery, notebooks, pens, and everyday tools. Fast delivery via WhatsApp." />
   <meta property="og:image" content="images/og-image.jpg" />
@@ -73,7 +73,7 @@
   <div id="layout-footer"></div>
   <div id="layout-cart"></div>
 
-  <script src="js/layout.js?v=6"></script>
+  <script src="js/layout.js?v=7"></script>
   <!-- Home specific script to load categories and featured products -->
   <script>
     document.addEventListener("DOMContentLoaded", async function() {
@@ -128,7 +128,7 @@
         });
 
         // Build Homepage Reviews
-        fetch('./data/reviews.json?v=6')
+        fetch('./data/reviews.json?v=7')
           .then(r => r.ok ? r.json() : [])
           .then(reviews => {
             const generalReviews = reviews.filter(r => !r.productId).slice(0, 3);
@@ -160,7 +160,7 @@
       }
     });
   </script>
-  <script src="js/cart.js?v=6"></script>
+  <script src="js/cart.js?v=7"></script>
 </body>
 </html>
 
