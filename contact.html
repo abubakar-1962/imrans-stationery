@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Imran's Stationery – Urdu Bazaar, Lahore. Phone, WhatsApp, email or visit us." />
+  <title>Contact – Imran's Stationery</title>
+  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="icon" href="images/placeholder.svg" />
+  <script src="js/config.js?v=6"></script>
+  <meta property="og:title" content="Contact Us - Imran's Stationery" />
+  <meta property="og:description" content="Get in touch with Imran's Stationery." />
+  <meta property="og:image" content="images/placeholder.svg" />
+  <!-- UPDATE og:url to the real domain before going live -->
+  <meta property="og:url" content="https://imransstationery.example.com/contact.html" />
+</head>
+<body class="contact-page">
+
+  <!-- Injected Header -->
+  <div id="layout-header"></div>
+
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>Contact Us</h1>
+      </div>
+    </div>
+
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 class="visually-hidden" id="contact-heading">Contact Details</h2>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div>
+                <h3>Our Location</h3>
+                <p>Shop No. 47, Urdu Bazaar,<br />Near Chowk Urdu Bazaar,<br />Lahore, Punjab 54000</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>
+                <h3>Phone</h3>
+                <p>
+                  <a href="tel:+923036360703">+92 303 636 0703</a><br />
+                  <a href="tel:+924237654321">042-37654321</a> (Shop)
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:imranstationery@gmail.com">imranstationery@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>
+                <h3>Opening Hours</h3>
+                <p>
+                  Monday – Saturday: 9:00 AM – 8:00 PM<br />
+                  Sunday: 10:00 AM – 4:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h2>Send Us a Message</h2>
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Ali Ahmed" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="e.g. ali@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 0303-6360703" />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="general">General Inquiry</option>
+                  <option value="order">Place a Bulk Order</option>
+                  <option value="availability">Product Availability</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here…" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Send via WhatsApp</button>
+              <div id="form-feedback" class="form-feedback" role="alert" aria-live="assertive"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Injected Footer & Cart -->
+  <div id="layout-footer"></div>
+  <div id="layout-cart"></div>
+
+  <script src="js/layout.js?v=6"></script>
+  <script src="js/cart.js?v=6"></script>
+  <script src="js/contact.js?v=6"></script>
+
+</body>
+</html>
+
+

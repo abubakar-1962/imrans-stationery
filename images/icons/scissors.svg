@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#f4f3ef" rx="12"/>
+  <g stroke="#2b2b2b" stroke-width="3">
+    <!-- Right blade (goes to left top) -->
+    <path d="M117 119 L75 55" stroke="#a0a4a8" stroke-width="10" stroke-linecap="round"/>
+    <!-- Left blade (goes to right top) -->
+    <path d="M83 119 L125 55" stroke="#d0d4d8" stroke-width="10" stroke-linecap="round"/>
+    
+    <!-- Right handle -->
+    <circle cx="125" cy="135" r="14" fill="none" stroke="#c2694f" stroke-width="8"/>
+    <!-- Left handle -->
+    <circle cx="75" cy="135" r="14" fill="none" stroke="#c2694f" stroke-width="8"/>
+    
+    <!-- Pivot -->
+    <circle cx="100" cy="93" r="3" fill="#2b2b2b" stroke="none"/>
+  </g>
+</svg>

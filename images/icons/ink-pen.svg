@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#f4f3ef" rx="12"/>
+  <g transform="translate(100, 100) rotate(45) translate(-100, -100)" stroke="#2b2b2b" stroke-width="3">
+    <!-- Back Cap -->
+    <rect x="80" y="30" width="40" height="20" rx="4" fill="#2b2b2b"/>
+    
+    <!-- Main Body -->
+    <rect x="80" y="50" width="40" height="65" fill="#3f7a7d"/>
+    
+    <!-- Grip Section -->
+    <rect x="85" y="115" width="30" height="20" fill="#2b2b2b"/>
+    
+    <!-- Gold Nib -->
+    <polygon points="85,135 115,135 100,165" fill="#c9a227"/>
+    
+    <!-- Nib Slit (Line down the middle) -->
+    <line x1="100" y1="135" x2="100" y2="155"/>
+    <circle cx="100" cy="148" r="2" fill="#2b2b2b" stroke="none"/>
+  </g>
+</svg>

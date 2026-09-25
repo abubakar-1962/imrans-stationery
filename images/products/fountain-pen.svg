@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#f0f4f0" rx="10"/>
+  <!-- Pen body diagonal -->
+  <rect x="60" y="30" width="80" height="28" rx="14" fill="#1a6b3c" transform="rotate(30 100 44)"/>
+  <rect x="60" y="30" width="80" height="28" rx="14" fill="#134d2b" transform="rotate(30 100 44)" opacity="0.4"/>
+  <!-- Full pen body -->
+  <rect x="20" y="88" width="140" height="24" rx="12" fill="#1a6b3c"/>
+  <rect x="20" y="88" width="30" height="24" rx="12" fill="#134d2b"/>
+  <!-- Gold band -->
+  <rect x="148" y="90" width="12" height="20" fill="#f5a623"/>
+  <!-- Nib -->
+  <polygon points="160,100 185,90 185,110" fill="#9ca3af"/>
+  <line x1="170" y1="100" x2="185" y2="100" stroke="#6b7280" stroke-width="1.5"/>
+  <!-- Clip -->
+  <rect x="22" y="83" width="6" height="60" rx="3" fill="#0d3b1e"/>
+  <circle cx="25" cy="145" r="5" fill="#0d3b1e"/>
+</svg>

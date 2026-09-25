@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#f0f4f0" rx="10"/>
+  <!-- Scissors body: two blades crossing -->
+  <line x1="100" y1="100" x2="160" y2="40" stroke="#9ca3af" stroke-width="10" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="160" y2="160" stroke="#9ca3af" stroke-width="10" stroke-linecap="round"/>
+  <!-- Pivot screw -->
+  <circle cx="100" cy="100" r="8" fill="#6b7280"/>
+  <circle cx="100" cy="100" r="4" fill="#d1d5db"/>
+  <!-- Handles -->
+  <ellipse cx="62" cy="68" rx="22" ry="15" fill="none" stroke="#ef4444" stroke-width="6" transform="rotate(-45 62 68)"/>
+  <ellipse cx="62" cy="133" rx="22" ry="15" fill="none" stroke="#ef4444" stroke-width="6" transform="rotate(45 62 133)"/>
+  <!-- Handle connectors -->
+  <line x1="100" y1="100" x2="70" y2="80" stroke="#9ca3af" stroke-width="10" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="70" y2="120" stroke="#9ca3af" stroke-width="10" stroke-linecap="round"/>
+</svg>

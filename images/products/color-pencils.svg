@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#f0f4f0" rx="10"/>
+  <!-- Fan of colored pencils -->
+  <g transform="translate(100,160)">
+    <rect x="-6" y="-120" width="12" height="110" rx="3" fill="#ef4444" transform="rotate(-30)"/>
+    <polygon points="-6,-120 6,-120 0,-135" fill="#c53030" transform="rotate(-30)"/>
+    <rect x="-6" y="-120" width="12" height="110" rx="3" fill="#f59e0b" transform="rotate(-15)"/>
+    <polygon points="-6,-120 6,-120 0,-135" fill="#d97706" transform="rotate(-15)"/>
+    <rect x="-6" y="-120" width="12" height="110" rx="3" fill="#22c55e" transform="rotate(0)"/>
+    <polygon points="-6,-120 6,-120 0,-135" fill="#15803d" transform="rotate(0)"/>
+    <rect x="-6" y="-120" width="12" height="110" rx="3" fill="#3b82f6" transform="rotate(15)"/>
+    <polygon points="-6,-120 6,-120 0,-135" fill="#1d4ed8" transform="rotate(15)"/>
+    <rect x="-6" y="-120" width="12" height="110" rx="3" fill="#8b5cf6" transform="rotate(30)"/>
+    <polygon points="-6,-120 6,-120 0,-135" fill="#6d28d9" transform="rotate(30)"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#f0f4f0" rx="10"/>
+  <rect x="25" y="70" width="150" height="90" rx="12" fill="#8b5cf6"/>
+  <rect x="25" y="70" width="150" height="22" rx="12" fill="#7c3aed"/>
+  <!-- Zipper -->
+  <line x1="40" y1="81" x2="160" y2="81" stroke="#a78bfa" stroke-width="3" stroke-dasharray="6,4"/>
+  <circle cx="160" cy="81" r="7" fill="#f5a623"/>
+  <!-- Pens sticking out -->
+  <rect x="70" y="40" width="10" height="50" rx="3" fill="#ef4444"/>
+  <rect x="95" y="35" width="10" height="55" rx="3" fill="#3b82f6"/>
+  <rect x="120" y="42" width="10" height="48" rx="3" fill="#22c55e"/>
+</svg>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Imran's Stationery – Quality school and office supplies in Urdu Bazaar, Lahore." />
+  <title>Imran's Stationery – Urdu Bazaar, Lahore</title>
+  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="icon" href="images/placeholder.svg" />
+  <script src="js/config.js?v=6"></script>
+  <meta property="og:title" content="Imran's Stationery" />
+  <meta property="og:description" content="Premium stationery and daily goods." />
+  <meta property="og:image" content="images/placeholder.svg" />
+  <!-- UPDATE og:url to the real domain before going live -->
+  <meta property="og:url" content="https://imransstationery.example.com/" />
+</head>
+<body class="home-page">
+
+  <!-- Injected Header -->
+  <div id="layout-header"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-image-slot">
+        <!-- Recommended size: 1920x800 WebP -->
+        <img src="images/hero.jpg" alt="Stationery items scattered on a desk" loading="eager" onerror="this.style.display='none'">
+      </div>
+      <div class="hero-content">
+        <h1>Built to Impress</h1>
+        <p>Explore our curated collection of fine stationery and everyday tools.</p>
+        <a href="products.html" class="btn btn-hero">Shop the Collection</a>
+      </div>
+    </section>
+
+    <!-- Dynamic Category Tiles -->
+    <section class="categories-section">
+      <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div id="category-tiles" class="category-tiles-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Featured Products -->
+    <section class="featured-section">
+      <div class="container">
+        <h2 class="section-title">Popular Products</h2>
+        <div id="featured-products-grid" class="products-grid">
+          <!-- Populated by JS -->
+        </div>
+        <div class="view-all-container">
+          <a href="products.html" class="btn btn-outline">View all products</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Injected Footer & Cart -->
+  <div id="layout-footer"></div>
+  <div id="layout-cart"></div>
+
+  <script src="js/layout.js?v=6"></script>
+  <!-- Home specific script to load categories and featured products -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async function() {
+      try {
+        const products = await window.getProductsData();
+        
+        // Build Category Tiles
+        const cats = Array.from(new Set(products.map(p => p.category))).filter(Boolean);
+        const catGrid = document.getElementById("category-tiles");
+        cats.forEach(cat => {
+          // Find first product in this category to use as the category image
+          const p = products.find(prod => prod.category === cat);
+          const imgUrl = (p && p.variants && p.variants[0] && p.variants[0].image) || (p && p.image) || "images/placeholder.svg";
+          
+          const a = document.createElement("a");
+          a.href = "products.html?cat=" + encodeURIComponent(cat);
+          a.className = "category-tile";
+          a.innerHTML = `
+            <div class="tile-img-wrap">
+              <img src="${imgUrl}" alt="${cat}" loading="lazy" onerror="this.src='images/placeholder.svg'" />
+            </div>
+            <h3>${cat}</h3>
+            <span class="view-link">View collection &rarr;</span>
+          `;
+          catGrid.appendChild(a);
+        });
+
+        // Build Featured Products
+        const featuredGrid = document.getElementById("featured-products-grid");
+        const featured = products.filter(p => p.featured === true && p.status !== "discontinued").slice(0, 4); // show up to 4
+        
+        featured.forEach(p => {
+          const hasColors = Array.isArray(p.variants) && p.variants.length > 0;
+          const v = hasColors ? p.variants[0] : null;
+          const imgUrl = (v && v.image) || p.image || "images/placeholder.svg";
+          const priceText = p.price ? "Rs. " + p.price.toLocaleString() : "Ask for price";
+          
+          const card = document.createElement("article");
+          card.className = "product-card";
+          card.innerHTML = `
+            <div class="product-img-wrap" onclick="window.location.href='products.html?q=${encodeURIComponent(p.name)}'">
+              <img src="${imgUrl}" alt="${p.name}" loading="lazy" onerror="this.src='images/placeholder.svg'" />
+              <button class="card-action" onclick="event.stopPropagation(); window.location.href='products.html?q=${encodeURIComponent(p.name)}'">View details</button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">${p.name}</h3>
+              <p class="product-price">${priceText}</p>
+              ${hasColors ? `<p class="card-meta">${p.variants.length} colors</p>` : ''}
+            </div>
+          `;
+          featuredGrid.appendChild(card);
+        });
+
+      } catch (err) {
+        console.error("Error loading products for home page:", err);
+      }
+    });
+  </script>
+  <script src="js/cart.js?v=6"></script>
+</body>
+</html>
+
+
+
+
+
+

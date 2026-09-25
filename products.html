@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse all stationery products at Imran's Stationery, Urdu Bazaar, Lahore." />
+  <title>Products – Imran's Stationery</title>
+  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="icon" href="images/placeholder.svg" />
+  <script src="js/config.js?v=6"></script>
+  <meta property="og:title" content="Products - Imran's Stationery" />
+  <meta property="og:description" content="Browse all stationery products at Imran's Stationery." />
+  <meta property="og:image" content="images/placeholder.svg" />
+  <!-- UPDATE og:url to the real domain before going live -->
+  <meta property="og:url" content="https://imransstationery.example.com/products.html" />
+</head>
+<body class="products-page">
+
+  <!-- Injected Header -->
+  <div id="layout-header"></div>
+
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>All Products</h1>
+      </div>
+    </div>
+
+    <section class="products-catalog" aria-labelledby="products-heading">
+      <div class="container">
+        <h2 id="products-heading" class="visually-hidden">Product Catalog</h2>
+        
+        <div id="toolbar" class="catalog-tools"></div>
+        <p class="catalog-count"><span id="product-count">Loading...</span></p>
+
+        <div id="products-grid" class="products-grid" role="list" aria-label="Products"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Injected Footer & Cart -->
+  <div id="layout-footer"></div>
+  <div id="layout-cart"></div>
+
+  <script src="js/layout.js?v=6"></script>
+  <script src="js/cart.js?v=6"></script>
+  <script src="js/products.js?v=6"></script>
+
+</body>
+</html>
+
+

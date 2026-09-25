@@ -1,0 +1,175 @@
+﻿[
+    {
+        "id":  1,
+        "name":  "Ballpoint Pen Set",
+        "price":  250,
+        "category":  "Pens",
+        "image":  "images/products/pen-set.svg",
+        "description":  "Smooth writing ballpoint pens, pack of 10. Available in assorted, blue, red, or black.",
+        "variants":  [
+                         {
+                             "color":  "Assorted",
+                             "hex":  "#6366f1",
+                             "image":  "images/products/pen-set.svg"
+                         },
+                         {
+                             "color":  "Blue",
+                             "hex":  "#1e40af",
+                             "image":  "images/products/pen-set-blue.svg"
+                         },
+                         {
+                             "color":  "Red",
+                             "hex":  "#dc2626",
+                             "image":  "images/products/pen-set-red.svg"
+                         },
+                         {
+                             "color":  "Black",
+                             "hex":  "#1f2937",
+                             "image":  "images/products/pen-set-black.svg"
+                         }
+                     ]
+    },
+    {
+        "id":  2,
+        "name":  "A4 Ruled Notebook",
+        "price":  180,
+        "category":  "Notebooks",
+        "image":  "images/products/notebook.svg",
+        "description":  "200-page ruled notebook, durable hardcover, perfect for school and office."
+    },
+    {
+        "id":  3,
+        "name":  "Geometry Box",
+        "price":  350,
+        "category":  "Math Tools",
+        "image":  "images/products/geometry-box.svg",
+        "description":  "Complete geometry set with compass, protractor, ruler and more."
+    },
+    {
+        "id":  4,
+        "name":  "Highlighter Set (6 Colors)",
+        "price":  220,
+        "category":  "Markers",
+        "image":  "images/products/highlighters.svg",
+        "description":  "Bright fluorescent highlighters that won\u0027t bleed through pages."
+    },
+    {
+        "id":  5,
+        "name":  "Sticky Notes Pack",
+        "price":  120,
+        "category":  "Office",
+        "image":  "images/products/sticky-notes.svg",
+        "description":  "400 sticky notes in 4 neon colors, 100 sheets each."
+    },
+    {
+        "id":  6,
+        "name":  "Pencil Case / Pouch",
+        "price":  280,
+        "category":  "Accessories",
+        "image":  "images/products/pencil-case.svg",
+        "description":  "Spacious zip-up pencil case with multiple compartments."
+    },
+    {
+        "id":  7,
+        "name":  "Fountain Pen",
+        "price":  450,
+        "category":  "Pens",
+        "image":  "images/products/fountain-pen.svg",
+        "description":  "Classic fountain pen with smooth nib, includes 2 ink cartridges. Choose your ink color.",
+        "variants":  [
+                         {
+                             "color":  "Blue",
+                             "hex":  "#1e40af",
+                             "image":  "images/products/fountain-pen.svg"
+                         },
+                         {
+                             "color":  "Black",
+                             "hex":  "#1f2937",
+                             "image":  "images/products/fountain-pen-black.svg"
+                         },
+                         {
+                             "color":  "Red",
+                             "hex":  "#dc2626",
+                             "image":  "images/products/fountain-pen-red.svg"
+                         }
+                     ]
+    },
+    {
+        "id":  8,
+        "name":  "Sketch Book A3",
+        "price":  320,
+        "category":  "Notebooks",
+        "image":  "images/products/sketchbook.svg",
+        "description":  "80gsm acid-free paper sketchbook for drawing and painting."
+    },
+    {
+        "id":  9,
+        "name":  "Whiteboard Marker Set",
+        "price":  190,
+        "category":  "Markers",
+        "image":  "images/products/whiteboard-markers.svg",
+        "description":  "Dry-erase markers in 4 colors, chisel tip for clear board writing."
+    },
+    {
+        "id":  10,
+        "name":  "Scissors (Stainless Steel)",
+        "price":  150,
+        "category":  "Office",
+        "image":  "images/products/scissors.svg",
+        "description":  "Sharp stainless steel scissors with comfortable soft-grip handles."
+    },
+    {
+        "id":  11,
+        "name":  "Color Pencils (24 Pack)",
+        "price":  380,
+        "category":  "Markers",
+        "image":  "images/products/color-pencils.svg",
+        "description":  "Vibrant pre-sharpened color pencils, smooth pigment for rich colors."
+    },
+    {
+        "id":  12,
+        "name":  "Scientific Calculator",
+        "price":  1200,
+        "category":  "Math Tools",
+        "image":  "images/products/calculator.svg",
+        "description":  "240 functions scientific calculator, ideal for matric and FSc students."
+    },
+    {
+        "id":  13,
+        "name":  "Exam Kit",
+        "includes":  [
+                         "2 Ballpoint pens",
+                         "1 Geometry box",
+                         "1 Clear clipboard"
+                     ],
+        "description":  "Everything you need for your exams.",
+        "price":  null,
+        "image":  "images/placeholder.svg",
+        "category":  "Bundles"
+    },
+    {
+        "id":  14,
+        "name":  "Geometry Set Bundle",
+        "includes":  [
+                         "1 Geometry box",
+                         "1 Scientific Calculator",
+                         "1 Ruler"
+                     ],
+        "description":  "Essential geometry tools for students.",
+        "price":  null,
+        "image":  "images/placeholder.svg",
+        "category":  "Bundles"
+    },
+    {
+        "id":  15,
+        "name":  "Marker Pack",
+        "includes":  [
+                         "Whiteboard Marker Set",
+                         "Highlighter Set (6 Colors)"
+                     ],
+        "description":  "Various markers for whiteboard and highlighting.",
+        "price":  null,
+        "image":  "images/placeholder.svg",
+        "category":  "Bundles"
+    }
+]
