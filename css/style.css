@@ -73,9 +73,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 1rem;
   text-decoration: none;
 }
-.btn-primary {
-  background-color: var(--color-primary);
-  color: #fff;
+.btn-primary { background-color: var(--color-primary); color: var(--color-bg);
   border: 1px solid var(--color-primary);
 }
 .btn-primary:hover { background-color: var(--color-primary-hover); }
@@ -281,7 +279,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .product-name { font-size: 1.1rem; margin-bottom: var(--sp-xs); font-family: var(--font-body); }
 .product-price { font-size: 1.05rem; font-weight: 700; color: var(--color-primary); margin: 0; }
 .card-meta { font-size: 0.85rem; color: var(--color-muted); margin: 4px 0 0 0; }
-.card-btn { margin-top: auto; padding: 8px; font-size: 0.9rem; margin-top: var(--sp-md); }
+.card-btn { margin-top: auto; padding: 8px; font-size: 0.9rem; }
 
 /* --- Categories Section --- */
 .section-title { text-align: center; font-size: 2rem; margin: var(--sp-2xl) 0 var(--sp-lg); }
@@ -374,12 +372,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .catalog-more { display: block; margin: var(--sp-xl) auto; padding: 10px 30px; font-weight: 600; border: 2px solid var(--color-primary); background: transparent; color: var(--color-primary); border-radius: var(--radius); transition: all var(--transition); }
 .catalog-more:hover { background: var(--color-primary); color: #fff; }
 
-.qv { border: none; padding: 0; border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); max-width: 800px; width: 95%; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.qv { border: none; padding: 0; position: relative; border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); max-width: 800px; width: 95%; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 .qv::backdrop { background: rgba(0,0,0,0.6); }
 .qv-close { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.8); border: none; font-size: 1.5rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; color: #333; }
 .qv-img { width: 100%; height: 350px; object-fit: contain; background: var(--img-bg); }
 .qv-body { padding: var(--sp-xl); }
-.qv-name { font-size: 1.8rem; margin-bottom: 8px; color: var(--color-primary); }
+.qv-name { font-size: 1.8rem; margin-bottom: 8px; color: var(--color-primary); padding-right: 60px; }
 .qv-price { font-size: 1.3rem; font-weight: 700; color: var(--color-text); margin-bottom: 16px; }
 .qv-desc { color: var(--color-muted); margin-bottom: var(--sp-xl); }
 .qv-swatches { display: flex; gap: 10px; margin-bottom: var(--sp-lg); align-items: center; flex-wrap: wrap; }
@@ -391,7 +389,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .card-qty-wrap { display: flex; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; background: var(--color-bg); }
 .card-qty-wrap button { padding: 10px 15px; background: transparent; font-weight: bold; }
 .card-qty-input { width: 50px; text-align: center; border: none; border-left: 1px solid var(--color-border); border-right: 1px solid var(--color-border); padding: 10px 0; background: transparent; font-family: inherit; color: inherit; }
-.qv-add { background: var(--color-primary); color: #fff; padding: 12px 24px; border-radius: var(--radius); font-weight: 600; flex-grow: 1; transition: background var(--transition); border: none; }
+.qv-add { background: var(--color-primary); color: var(--color-bg); padding: 12px 24px; border-radius: var(--radius); font-weight: 600; flex-grow: 1; transition: background var(--transition); border: none; }
 .qv-add:hover { background: var(--color-primary-hover); }
 
 /* --- Reviews --- */
@@ -475,12 +473,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 [data-design="modern"] .header-nav {
   border-top: none;
 }
-[data-design="modern"] .nav-menu {
-  gap: var(--sp-xl);
-}
-[data-design="modern"] .nav-menu li:not(:last-child)::after {
-  display: none;
-}
+[data-design="modern"] .nav-menu { gap: var(--sp-xl); }
+[data-design="modern"] .nav-menu li:not(:last-child)::after { margin-left: var(--sp-xl); }
+
 [data-design="modern"] .nav-link {
   font-weight: 400;
   font-size: 0.85rem;

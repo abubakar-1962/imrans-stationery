@@ -70,8 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <h4>Support</h4>
             <ul>
               <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="#">Shipping & Returns</a></li>
-              <li><a href="#">FAQ</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -124,10 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="form-group">
             <label for="co-name">Full Name *</label>
             <input type="text" id="co-name" placeholder="Your Name" />
-          </div>
-          <div class="form-group">
-            <label for="co-phone">WhatsApp Number *</label>
-            <input type="text" id="co-phone" placeholder="03XXXXXXXXX" />
           </div>
           <div class="form-group">
             <label for="co-address">Delivery Address *</label>

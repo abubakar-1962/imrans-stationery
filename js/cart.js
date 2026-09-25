@@ -1,4 +1,4 @@
-﻿/* cart.js â€” Shopping cart with color-variant support, localStorage-backed */
+/* cart.js â€” Shopping cart with color-variant support, localStorage-backed */
 
 function loadCart() {
   try {
@@ -217,7 +217,7 @@ function sendToWhatsApp(cartItems, customer) {
   var msg =
     "*New Order Request: " + orderId + "*\n" +
     "Name: " + customer.name + "\n" +
-    "Phone: " + customer.phone + "\n" +
+    "Note: My phone number is attached to this WhatsApp chat." + "\n" +
     "Address: " + customer.address + "\n" +
     "(Please share a Google Maps pin of this address in this chat)\n\n" +
     lines + "\n\n" +
@@ -285,7 +285,6 @@ var itemsList = document.getElementById("cart-items-list");
   if (submitBtn) {
     submitBtn.addEventListener("click", function () {
       var name = document.getElementById("co-name").value.trim();
-      var phone = document.getElementById("co-phone").value.trim();
       var address = document.getElementById("co-address").value.trim();
       var errorEl = document.getElementById("co-error");
 
@@ -296,24 +295,12 @@ var itemsList = document.getElementById("cart-items-list");
         return;
       }
 
-      var normalizedPhone = phone.replace(/\D/g, "");
-      if (normalizedPhone.startsWith("92")) {
-        normalizedPhone = "0" + normalizedPhone.substring(2);
-      } else if (normalizedPhone.startsWith("0092")) {
-        normalizedPhone = "0" + normalizedPhone.substring(4);
-      }
-      
-      if (!/^03\d{9}$/.test(normalizedPhone)) {
-        if (errorEl) errorEl.textContent = "Please enter a valid Pakistani mobile number (e.g. 03XXXXXXXXX).";
-        return;
-      }
-
       if (address.length < 15) {
         if (errorEl) errorEl.textContent = "Please enter a complete delivery address (at least 15 characters).";
         return;
       }
 
-      sendToWhatsApp(cart, { name: name, phone: normalizedPhone, address: address });
+      sendToWhatsApp(cart, { name: name, address: address });
       var checkoutForm = document.getElementById("checkout-form-container");
       if (checkoutForm) {
         checkoutForm.innerHTML = "<div style='text-align:center; padding: 1rem 0; color: var(--color-text); font-weight: 600;'>Your order request is ready &mdash; check WhatsApp to send it.</div>";

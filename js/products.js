@@ -1,4 +1,4 @@
-﻿/* products.js - shop page for a 1500+ product catalog.
+/* products.js - shop page for a 1500+ product catalog.
    Search, sort, category filter, "Show more" paging, a hover button on each
    card (Bungu-style) and a quick-view dialog for choosing options.
    Out-of-stock products and colors are never shown. */
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   function buildQuickView() {
     dlg = make("dialog", "qv");
     dlg.innerHTML =
-      '<button class="qv-close" type="button" aria-label="Close">&times;</button>' +
+      '<button class="qv-close" type="button" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>' +
       '<img class="qv-img" alt="" />' +
       '<div class="qv-body">' +
         '<h2 class="qv-name"></h2><p class="qv-price"></p><p class="qv-desc"></p>' +
