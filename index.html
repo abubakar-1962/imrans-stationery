@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="color-scheme" content="light">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Imran's Stationery – Quality school and office supplies in Urdu Bazaar, Lahore." />
-  <title>Imran's Stationery – Urdu Bazaar, Lahore</title>
+  <meta name="description" content="Imran's Stationery â€“ Quality school and office supplies in Urdu Bazaar, Lahore." />
+  <title>Imran's Stationery â€“ Urdu Bazaar, Lahore</title>
   <link rel="stylesheet" href="css/style.css?v=6" />
   <link rel="icon" href="images/placeholder.svg" />
   <script src="js/config.js?v=6"></script>
-  <meta property="og:title" content="Imran's Stationery" />
-  <meta property="og:description" content="Premium stationery and daily goods." />
-  <meta property="og:image" content="images/placeholder.svg" />
+    <meta property="og:title" content="Imran's Stationery | Quality school and office supplies in Urdu Bazaar, Lahore" />
+  <meta property="og:description" content="Explore our curated collection of fine stationery, notebooks, pens, and everyday tools. Fast delivery via WhatsApp." />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:type" content="website" />
   <!-- UPDATE og:url to the real domain before going live -->
   <meta property="og:url" content="https://imransstationery.example.com/" />
 </head>
@@ -53,6 +54,16 @@
         </div>
         <div class="view-all-container">
           <a href="products.html" class="btn btn-outline">View all products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews-section" style="padding: var(--sp-2xl) 0; background: var(--color-surface); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <h2 class="section-title">What customers say</h2>
+        <div id="homepage-reviews-grid" class="products-grid" style="gap: var(--sp-xl);">
+          <!-- Populated by JS -->
         </div>
       </div>
     </section>
@@ -116,6 +127,34 @@
           featuredGrid.appendChild(card);
         });
 
+        // Build Homepage Reviews
+        fetch('./data/reviews.json?v=6')
+          .then(r => r.ok ? r.json() : [])
+          .then(reviews => {
+            const generalReviews = reviews.filter(r => !r.productId).slice(0, 3);
+            const reviewGrid = document.getElementById("homepage-reviews-grid");
+            if (generalReviews.length === 0) {
+              document.querySelector(".reviews-section").style.display = 'none';
+              return;
+            }
+            generalReviews.forEach(rev => {
+              const stars = '&#9733;'.repeat(rev.rating) + '&#9734;'.repeat(5 - rev.rating);
+              const card = document.createElement("article");
+              card.className = "product-card";
+              card.style.padding = "var(--sp-lg)";
+              card.style.background = "var(--color-bg)";
+              card.innerHTML = `
+                <div style="color: #fbbf24; font-size: 1.2rem; margin-bottom: var(--sp-sm);">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <p style="font-style: italic; margin-bottom: var(--sp-md); line-height: 1.5; color: var(--color-text);">"${rev.text}"</p>
+                <div style="font-size: 0.9rem; font-weight: 600;">${rev.name}</div>
+                <div style="font-size: 0.8rem; color: var(--color-muted); margin-top: 4px;">${new Date(rev.date).toLocaleDateString()}</div>
+              `;
+              // Fix the stars rendering manually based on rating
+              card.querySelector('div').innerHTML = stars;
+              reviewGrid.appendChild(card);
+            });
+          })
+          .catch(err => console.error("Error loading reviews:", err));
       } catch (err) {
         console.error("Error loading products for home page:", err);
       }
@@ -124,6 +163,7 @@
   <script src="js/cart.js?v=6"></script>
 </body>
 </html>
+
 
 
 

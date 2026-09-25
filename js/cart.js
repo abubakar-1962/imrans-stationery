@@ -1,4 +1,4 @@
-/* cart.js — Shopping cart with color-variant support, localStorage-backed */
+﻿/* cart.js â€” Shopping cart with color-variant support, localStorage-backed */
 
 function loadCart() {
   try {
@@ -313,12 +313,18 @@ var itemsList = document.getElementById("cart-items-list");
         return;
       }
 
-      sendToWhatsApp(cart, { name: name, phone: normalizedPhone, address: address }); var btn = document.getElementById("checkout-btn"); if (btn) { var oldText = btn.textContent; btn.textContent = "Order ready � check WhatsApp to send it"; btn.disabled = true; setTimeout(function() { btn.textContent = oldText; btn.disabled = false; }, 4000); }
+      sendToWhatsApp(cart, { name: name, phone: normalizedPhone, address: address });
+      var checkoutForm = document.getElementById("checkout-form-container");
+      if (checkoutForm) {
+        checkoutForm.innerHTML = "<div style='text-align:center; padding: 1rem 0; color: var(--color-text); font-weight: 600;'>Your order request is ready &mdash; check WhatsApp to send it.</div>";
+      }
     });
   }
 
   window.cartAddItem = addToCart;
 });
+
+
 
 
 

@@ -1,4 +1,4 @@
-// js/config.js - Single source of truth for shop contact details.
+﻿// js/config.js - Single source of truth for shop contact details.
 // Edit this file to update the number everywhere at once.
 
 const SHOP = {
@@ -13,7 +13,7 @@ const SHOP = {
   FREE_DELIVERY_THRESHOLD: 7000,
 
   // Payment Safety Note (shown in WhatsApp order message)
-  PAYMENT_NOTE: "⚠️ Important: Please do not pay until we confirm your order and total in this chat. Only send payments to the JazzCash/Easypaisa account title and number we provide here. NEVER share your PIN or OTP with anyone.",
+  PAYMENT_NOTE: "âš ï¸ Important: Please do not pay until we confirm your order and total in this chat. Only send payments to the JazzCash/Easypaisa account title and number we provide here. NEVER share your PIN or OTP with anyone.",
 
   // Used in wa.me links: country code + number, no + or spaces
   whatsapp: "923036360703",
@@ -42,4 +42,14 @@ window.getProductsData = function(testMode) {
     window._productsPromises[key] = fetch("./data/" + file + "?v=6").then(function(r) { return r.ok ? r.json() : Promise.reject(new Error(r.statusText)); });
   }
   return window._productsPromises[key];
+};
+
+// Fetch curated reviews (from data/reviews.json)
+window.getReviewsData = function(testMode) {
+  var key = testMode ? "test_reviews" : "main_reviews";
+  window._reviewsPromises = window._reviewsPromises || {};
+  if (!window._reviewsPromises[key]) {
+    window._reviewsPromises[key] = fetch("./data/reviews.json?v=6").then(function(r) { return r.ok ? r.json() : []; });
+  }
+  return window._reviewsPromises[key];
 };

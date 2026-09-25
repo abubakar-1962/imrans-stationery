@@ -215,12 +215,16 @@ document.addEventListener("DOMContentLoaded", async function () {
           '</div>' +
           '<button type="button" class="qv-add">Add to cart</button>' +
           '</div>' +
-          '<div class="qv-reviews" style="display:none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">' +
-            '<h3>Customer Reviews</h3>' +
-            '<div class="qv-reviews-header" style="margin-bottom: var(--sp-sm); font-size: 0.9rem;"></div>' +
-            '<div class="qv-reviews-list"></div>' +
+          '<div class="qv-reviews" style="display:none;"><div class="qv-reviews-header"></div><div class="qv-reviews-list"></div></div>' +
+            '<form class="qv-review-form">' +
+              '<h4>Write a Review</h4>' +
+              '<input type="text" name="rname" placeholder="Your name" required>' +
+              '<select name="rrating" required><option value="5">5 Stars</option><option value="4">4 Stars</option><option value="3">3 Stars</option><option value="2">2 Stars</option><option value="1">1 Star</option></select>' +
+              '<textarea name="rcomment" placeholder="Your review" required></textarea>' +
+              '<button type="submit" class="btn">Submit Review</button>' +
+            '</form>' +
           '</div>' +
-      '</div>';
+        '</div>';
     document.body.appendChild(dlg);
 
     var qtyInput = dlg.querySelector(".card-qty-input");
@@ -240,55 +244,47 @@ document.addEventListener("DOMContentLoaded", async function () {
       setTimeout(function () { dlg.close(); addBtn.textContent = "Add to cart"; }, 700);
     });
 
-
-
     var revForm = dlg.querySelector(".qv-review-form");
-    if (revForm) revForm.style.display = "none";
-  }
-
-  function renderReviews(p) {
-    var wrapper = dlg.querySelector(".qv-reviews");
-    var header = dlg.querySelector(".qv-reviews-header");
-    var list = dlg.querySelector(".qv-reviews-list");
-    
-    if (typeof window.getReviewsData !== "function") {
-      wrapper.style.display = "none";
-      return;
-    }
-    
-    window.getReviewsData().then(function(reviews) {
-      var prodReviews = reviews.filter(function(r) { return r.productId === p.id || r.productId === String(p.id); });
-      if (!prodReviews.length) {
-        wrapper.style.display = "none";
-        return;
-      }
+    revForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      var name = revForm.elements["rname"].value;
+      var rating = revForm.elements["rrating"].value;
+      var comment = revForm.elements["rcomment"].value;
+      var date = new Date().toLocaleDateString();
+      var newReview = { name: name, rating: parseInt(rating), comment: comment, date: date };
       
-      wrapper.style.display = "block";
-      var sum = 0;
-      prodReviews.forEach(function(r) { sum += r.rating; });
-      var avg = (sum / prodReviews.length).toFixed(1);
+      // Append to local storage since there is no backend yet.
+      // NOTE: Reviews won't be visible to other visitors until there's a real backend.
+      var localReviews = JSON.parse(localStorage.getItem("ims_reviews_" + qv.product.id) || "[]");
+      localReviews.push(newReview);
+      localStorage.setItem("ims_reviews_" + qv.product.id, JSON.stringify(localReviews));
       
-      header.innerHTML = "<strong>" + avg + " out of 5 stars</strong> (" + prodReviews.length + " review" + (prodReviews.length > 1 ? "s" : "") + ")";
-      
-      list.innerHTML = "";
-      var toShow = prodReviews.slice(0, 3);
-      toShow.forEach(function(r) {
-        var stars = '&#9733;'.repeat(r.rating) + '&#9734;'.repeat(5 - r.rating);
-        var d = document.createElement("div");
-        d.className = "review-item";
-        d.style.marginBottom = "var(--sp-md)";
-        d.innerHTML = 
-          "<div style='color:#fbbf24;font-size:1.1rem;'>" + stars + "</div>" +
-          "<div><strong>" + (r.name || "Anonymous") + "</strong> <small style='color:var(--color-muted);margin-left:8px;'>" + new Date(r.date).toLocaleDateString() + "</small></div>" +
-          "<p style='margin-top:4px;font-size:0.9rem;'>" + (r.text || "") + "</p>";
-        list.appendChild(d);
-      });
-    }).catch(function(err) {
-      wrapper.style.display = "none";
+      renderReviews(qv.product);
+      revForm.reset();
     });
   }
 
-
+    function renderReviews(p) {
+    var list = dlg.querySelector(".qv-reviews-list");
+    var localReviews = JSON.parse(localStorage.getItem("ims_reviews_" + p.id) || "[]");
+    var serverReviews = p.reviews || [];
+    var combined = serverReviews.concat(localReviews);
+    
+    list.innerHTML = "";
+    if (!combined.length) {
+      list.innerHTML = "<p>No reviews yet. Be the first to review!</p>";
+      return;
+    }
+    
+    var frag = document.createDocumentFragment();
+    combined.forEach(function(r) {
+      var d = document.createElement("div");
+      d.className = "review-item";
+      d.innerHTML = "<strong>" + r.name + "</strong> (" + r.rating + "/5 stars) <small>" + r.date + "</small><p>" + r.comment + "</p>";
+      frag.appendChild(d);
+    });
+    list.appendChild(frag);
+  }
   
   function openQuickView(p) {
     var img       = dlg.querySelector(".qv-img");
@@ -331,9 +327,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     dlg.showModal();
   }
 });
-
-
-
 
 
 
