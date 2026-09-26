@@ -5,13 +5,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const feedback = document.getElementById("form-feedback");
   if (!form) return;
 
+  const subjectSelect = form.querySelector("#subject");
+  const otherGroup = document.getElementById("other-subject-group");
+  if (subjectSelect && otherGroup) {
+    subjectSelect.addEventListener("change", function() {
+      if (subjectSelect.value === "other") {
+        otherGroup.style.display = "block";
+      } else {
+        otherGroup.style.display = "none";
+      }
+    });
+  }
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const name    = form.querySelector("#name").value.trim();
     const email   = form.querySelector("#email").value.trim();
     const phone   = form.querySelector("#phone") ? form.querySelector("#phone").value.trim() : "";
-    const subject = form.querySelector("#subject") ? form.querySelector("#subject").options[form.querySelector("#subject").selectedIndex].text : "";
+    let subject = "";
+    const subjectDropdown = form.querySelector("#subject");
+    if (subjectDropdown) {
+      if (subjectDropdown.value === "other") {
+        const otherInput = form.querySelector("#other-subject");
+        subject = otherInput && otherInput.value.trim() ? "Other: " + otherInput.value.trim() : "Other";
+      } else {
+        subject = subjectDropdown.options[subjectDropdown.selectedIndex].text;
+      }
+    }
     const message = form.querySelector("#message").value.trim();
 
     if (!name) {

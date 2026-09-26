@@ -74,11 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="footer-col">
             <h4>Visit Us</h4>
-            <address>
-              Shop No. 47, Urdu Bazaar<br>
-              Near Chowk Urdu Bazaar<br>
-              Lahore, Punjab 54000
-            </address>
+            <address data-address></address>
           </div>
         </div>
         <div class="footer-bottom">
@@ -141,6 +137,41 @@ document.addEventListener("DOMContentLoaded", function () {
   if (headerContainer) headerContainer.innerHTML = headerHTML;
   if (footerContainer) footerContainer.innerHTML = footerHTML;
   if (cartContainer)   cartContainer.innerHTML   = cartHTML;
+  // Populate dynamic elements from SHOP config
+  if (typeof SHOP !== 'undefined') {
+    if (SHOP.name) {
+      document.title = document.title.replace(/Imran's Stationery/g, SHOP.name);
+      document.querySelectorAll('.nav-logo, .footer-brand, .footer-bottom p, meta[name="description"]').forEach(el => {
+        if (el.tagName === 'META') {
+          el.content = el.content.replace(/Imran's Stationery/g, SHOP.name);
+        } else {
+          el.innerHTML = el.innerHTML.replace(/Imran's Stationery/g, SHOP.name);
+        }
+      });
+    }
+
+    // Floating WhatsApp button
+    document.querySelectorAll('.whatsapp-float').forEach(el => el.href = 'https://wa.me/' + SHOP.whatsapp);
+    
+    // Phones
+    document.querySelectorAll('[data-phone]').forEach(el => {
+      el.href = 'tel:+' + SHOP.whatsapp;
+      el.textContent = SHOP.phoneDisplay;
+    });
+    document.querySelectorAll('[data-phone-text]').forEach(el => el.textContent = SHOP.phoneDisplay);
+    document.querySelectorAll('[data-shop-phone]').forEach(el => { el.href = 'tel:' + SHOP.shopPhone; el.textContent = SHOP.shopPhone; });
+    document.querySelectorAll('[data-phone-placeholder]').forEach(el => el.placeholder = 'e.g. ' + SHOP.phoneLocal);
+    
+    // Address
+    document.querySelectorAll('[data-address]').forEach(el => el.textContent = SHOP.address);
+    
+    // Email
+    document.querySelectorAll('[data-email]').forEach(el => {
+      el.href = 'mailto:' + SHOP.email;
+      el.textContent = SHOP.email;
+    });
+  }
+
 
   // Setup Theme (Dark/Light) Toggle
   const themeToggle = document.getElementById("theme-toggle");

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   // products.html?catalog=test loads the fake 1500-product file instead
   var testMode = params.get("catalog") === "test";
 
-  if (countEl) countEl.textContent = "Loading productsâ€¦";
+  if (countEl) countEl.textContent = "Loading products...";
 
   try {
     var rawProducts = await window.getProductsData(testMode); all = rawProducts.map(prepare).filter(Boolean);

@@ -81,11 +81,12 @@
         const products = await window.getProductsData();
         
         // Build Category Tiles
-        const cats = Array.from(new Set(products.map(p => p.category))).filter(Boolean);
+        const activeProducts = products.filter(p => p.status !== "discontinued");
+        const cats = Array.from(new Set(activeProducts.map(p => p.category))).filter(Boolean);
         const catGrid = document.getElementById("category-tiles");
         cats.forEach(cat => {
           // Find first product in this category to use as the category image
-          const p = products.find(prod => prod.category === cat);
+          const p = activeProducts.find(prod => prod.category === cat);
           const imgUrl = (p && p.variants && p.variants[0] && p.variants[0].image) || (p && p.image) || "images/placeholder.svg";
           
           const a = document.createElement("a");

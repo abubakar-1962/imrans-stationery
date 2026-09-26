@@ -13,7 +13,7 @@ const SHOP = {
   FREE_DELIVERY_THRESHOLD: 7000,
 
   // Payment Safety Note (shown in WhatsApp order message)
-  PAYMENT_NOTE: "âš ï¸ Important: Please do not pay until we confirm your order and total in this chat. Only send payments to the JazzCash/Easypaisa account title and number we provide here. NEVER share your PIN or OTP with anyone.",
+  PAYMENT_NOTE: "⚠️ Important: Please do not pay until we confirm your order and total in this chat. Only send payments to the JazzCash/Easypaisa account title and number we provide here. NEVER share your PIN or OTP with anyone.",
 
   // Used in wa.me links: country code + number, no + or spaces
   whatsapp: "923036360703",

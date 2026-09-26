@@ -36,7 +36,7 @@
             <div class="contact-item">
               <div>
                 <h3>Our Location</h3>
-                <p>Shop No. 47, Urdu Bazaar,<br />Near Chowk Urdu Bazaar,<br />Lahore, Punjab 54000</p>
+                <p data-address></p>
               </div>
             </div>
 
@@ -44,8 +44,8 @@
               <div>
                 <h3>Phone</h3>
                 <p>
-                  <a href="tel:+923036360703">+92 303 636 0703</a><br />
-                  <a href="tel:+924237654321">042-37654321</a> (Shop)
+                  <a href="#" data-phone></a><br />
+                  <a href="#" data-shop-phone></a> (Shop)
                 </p>
               </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="contact-item">
               <div>
                 <h3>Email</h3>
-                <p><a href="mailto:imranstationery@gmail.com">imranstationery@gmail.com</a></p>
+                <p><a href="#" data-email></a></p>
               </div>
             </div>
 
@@ -81,7 +81,7 @@
               </div>
               <div class="form-group">
                 <label for="phone">Phone / WhatsApp</label>
-                <input type="tel" id="phone" name="phone" placeholder="e.g. 0303-6360703" />
+                <input type="tel" id="phone" name="phone" data-phone-placeholder />
               </div>
               <div class="form-group">
                 <label for="subject">Subject</label>
@@ -91,6 +91,10 @@
                   <option value="availability">Product Availability</option>
                   <option value="other">Other</option>
                 </select>
+              </div>
+              <div class="form-group" id="other-subject-group" style="display: none;">
+                <label for="other-subject">Please specify</label>
+                <input type="text" id="other-subject" name="other-subject" placeholder="What is this regarding?" />
               </div>
               <div class="form-group">
                 <label for="message">Your Message *</label>
