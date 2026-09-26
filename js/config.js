@@ -1,4 +1,4 @@
-﻿// js/config.js - Single source of truth for shop contact details.
+// js/config.js - Single source of truth for shop contact details.
 // Edit this file to update the number everywhere at once.
 
 const SHOP = {
@@ -39,7 +39,7 @@ window.getProductsData = function(testMode) {
   window._productsPromises = window._productsPromises || {};
   if (!window._productsPromises[key]) {
     var file = testMode ? "products.test.json" : "products.json";
-    window._productsPromises[key] = fetch("./data/" + file + "?v=6").then(function(r) { return r.ok ? r.json() : Promise.reject(new Error(r.statusText)); });
+    window._productsPromises[key] = fetch("./data/" + file + "?v=7").then(function(r) { return r.ok ? r.json() : Promise.reject(new Error(r.statusText)); });
   }
   return window._productsPromises[key];
 };
@@ -49,7 +49,7 @@ window.getReviewsData = function(testMode) {
   var key = testMode ? "test_reviews" : "main_reviews";
   window._reviewsPromises = window._reviewsPromises || {};
   if (!window._reviewsPromises[key]) {
-    window._reviewsPromises[key] = fetch("./data/reviews.json?v=6").then(function(r) { return r.ok ? r.json() : []; });
+    window._reviewsPromises[key] = fetch("./data/reviews.json?v=7").then(function(r) { return r.ok ? r.json() : []; });
   }
   return window._reviewsPromises[key];
 };

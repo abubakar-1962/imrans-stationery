@@ -322,7 +322,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     swatches.style.display = p.variants.length ? "" : "none";
 
     pick(qv.variant);
-    p.base_reviews = p.base_reviews || p.reviews || [];
     renderReviews(p);
     dlg.showModal();
   }

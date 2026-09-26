@@ -12,8 +12,12 @@ All products are stored in `data/products.json`. To add a new product or edit an
 
 ## Caching & Cache-Busting
 
-Web browsers aggressively cache files to speed up loading. When you update data/products.json, returning visitors might still see the old products list.
-To fix this, you must **bump the version number** in js/products.js (e.g. change ?v=6 to ?v=7 in the fetch URL) and in the <script> tags across your HTML files.
+Web browsers aggressively cache files to speed up loading. When you update data/products.json or data/reviews.json, returning visitors might still see stale data.
+To fix this, bump the version number in **two places**:
+1. In `js/config.js` — change the `?v=` query strings inside `getProductsData()` and `getReviewsData()`.
+2. In each HTML file (`index.html`, `products.html`, `contact.html`) — change the `?v=` on every `<script src="...?v=X">` and `<link href="...?v=X">` tag.
+
+Keep both sets in sync (e.g. all `?v=7`).
 
 ## Product Status
 

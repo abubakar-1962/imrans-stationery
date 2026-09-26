@@ -89,25 +89,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .btn-block { width: 100%; }
 
 .card-action {
-  position: absolute;
-  bottom: var(--sp-md);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-surface);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  padding: 8px 16px;
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: all var(--transition);
-  white-space: nowrap;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.product-img-wrap:hover .card-action {
-  opacity: 1;
+  margin-top: auto;
+  padding: 8px;
+  font-size: 0.9rem;
 }
 
 .card-action:hover {
@@ -370,7 +354,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .qv { border: none; padding: 0; position: relative; border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); max-width: 800px; width: 95%; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 .qv::backdrop { background: rgba(0,0,0,0.6); }
-.qv-close { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.8); border: none; font-size: 1.5rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; color: #333; }
+.qv-close { position: absolute; top: 15px; right: 15px; background: var(--color-surface); border: none; font-size: 1.5rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; color: var(--color-text); }
 .qv-img { width: 100%; height: 350px; object-fit: contain; background: var(--img-bg); }
 .qv-body { padding: var(--sp-xl); }
 .qv-name { font-size: 1.8rem; margin-bottom: 8px; color: var(--color-primary); padding-right: 60px; }

@@ -116,20 +116,19 @@
           card.innerHTML = `
             <div class="product-img-wrap" onclick="window.location.href='products.html?q=${encodeURIComponent(p.name)}'">
               <img src="${imgUrl}" alt="${p.name}" loading="lazy" onerror="this.src='images/placeholder.svg'" />
-              <button class="card-action" onclick="event.stopPropagation(); window.location.href='products.html?q=${encodeURIComponent(p.name)}'">View details</button>
             </div>
             <div class="product-info">
               <h3 class="product-name">${p.name}</h3>
               <p class="product-price">${priceText}</p>
               ${hasColors ? `<p class="card-meta">${p.variants.length} colors</p>` : ''}
+              <button class="btn btn-outline card-action" onclick="event.stopPropagation(); window.location.href='products.html?q=${encodeURIComponent(p.name)}'">View details</button>
             </div>
           `;
           featuredGrid.appendChild(card);
         });
 
         // Build Homepage Reviews
-        fetch('./data/reviews.json?v=7')
-          .then(r => r.ok ? r.json() : [])
+        window.getReviewsData()
           .then(reviews => {
             const generalReviews = reviews.filter(r => !r.productId).slice(0, 3);
             const reviewGrid = document.getElementById("homepage-reviews-grid");

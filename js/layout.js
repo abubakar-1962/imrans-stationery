@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const headerNav = document.getElementById("dynamic-header-nav");
         if (headerNav) {
           let links = "";
-          cats.slice(0, 5).forEach(c => { 
+          cats.slice(0, 3).forEach(c => { 
             links += `<li><a href="products.html?cat=${encodeURIComponent(c)}" class="nav-link">${c}</a></li>`; 
           });
           const contactLi = headerNav.lastElementChild;
